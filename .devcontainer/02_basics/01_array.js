@@ -52,6 +52,8 @@ console.log('B', myArr);
 
 const mya2 = myArr.splice(1, 3)  // it takes range from(1,2,3) and it also removes that element from original array
 console.log(mya2);
+console.log(myArr);
+
 
 
  
