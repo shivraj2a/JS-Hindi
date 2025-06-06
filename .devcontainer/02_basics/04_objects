@@ -1,0 +1,93 @@
+const tinderuser = new Object()   //this is singleton object
+// console.log(tinderuser);
+// => {}
+
+// const tinder1 = {}           //this is non singleton object
+// console.log(tinder1);
+// => {}
+
+tinderuser.id = "abc123"
+tinderuser.name = "sammy"
+tinderuser.isLoggedIn = false
+// console.log(tinderuser);    //(1)
+//(1)=> { id: 'abc123', name: 'sammy', isLoggedIn: false }
+
+const regularuser = {
+    email: "some@gmail.com",
+    fullname: {
+        userfullname:{
+            firstname:"shivraj",
+            lastname:"mohite"
+        }
+    }
+}
+// console.log(regularuser);
+// console.log(regularuser.fullname.userfullname);  //(2)
+//(2)=>{ firstname: 'shivraj', lastname: 'mohite' }
+
+const obj1 = {1:"a", 2:"b"}
+const obj2 = {3:"a", 4:"b"}
+
+// const obj3 = {obj1, obj2}
+// console.log(obj3);               //(3)
+// (3)=> { obj1: { '1': 'a', '2': 'b' }, obj2: { '1': 'a', '2': 'b' } }
+
+// const obj3 = Object.assign(obj1, obj2)
+// console.log(obj3);                 //(4)
+//(4)=> { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+
+// const obj3 = Object.assign({}, obj1, obj2)
+// console.log(obj3);                   //(5)
+//(5)=> { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+
+const obj3 = {...obj1, ...obj2}     //spread operator used here
+// console.log(obj3);              //(6)
+//(6)=> { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+
+
+const user = [ 
+    {
+        id: "1",
+        email: "s@gmail.com"
+    },
+    {
+        id: "2",
+        email: "d@gmail.com"
+    },
+    {
+        id: "3",
+        email: "g@gmail.com"
+    }
+]
+// console.log(user[2].email);       //(8)
+// console.log(user[2].id);          //(8)
+//(8)=> g@gmail.com
+           3
+
+console.log(tinderuser);
+// (9)=> { id: 'abc123', name: 'sammy', isLoggedIn: false }
+
+console.log(Object.keys(tinderuser));  //(10)
+//(10)=> [ 'id', 'name', 'isLoggedIn' ]
+
+console.log(Object.values(tinderuser));   //(11)
+//(11)=> [ 'abc123', 'sammy', false ]
+
+console.log(Object.entries(tinderuser));  //(12)
+//(12)=> [ [ 'id', 'abc123' ], [ 'name', 'sammy' ], [ 'isLoggedIn', false ] ]
+
+console.log(tinderuser.hasOwnProperty("isLoggedIn"));   //(13)
+//(13)=> true
+
+console.log(tinderuser.hasOwnProperty("isLogged"));     //(14)
+//(14)=> false
+
+
+
+
+
+
+
+
+
+
